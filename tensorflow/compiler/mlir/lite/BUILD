@@ -316,6 +316,7 @@ genrule(
     ],
     cmd = ("$(location :op_quant_spec_getters_gen) " +
            "-I external/local_config_mlir/include " +
+           "-I external/org_tensorflow " +
            "$(location //tensorflow/compiler/mlir/lite:ir/tfl_ops.td) " + " -o $@"),
     tools = [":op_quant_spec_getters_gen"],
 )
@@ -357,6 +358,7 @@ genrule(
     ],
     cmd = ("$(location :operator-writer-gen) " +
            "-I external/local_config_mlir/include " +
+           "-I external/org_tensorflow " +
            "$(location //tensorflow/compiler/mlir/lite:ir/tfl_ops.td) " + " -o $@"),
     tools = [":operator-writer-gen"],
 )
